@@ -1,0 +1,20 @@
+<%- include('partial/head') %>
+  </head>
+
+  <body>
+
+ <%- include('partial/nav') %>
+
+    <main class="my-10 flex justify-center w-full">
+      <div class="w-[90%] flex flex-col justify-center items-center rounded-sm bg-gray-300 h-[30vh]">
+        <h1 class="text-3xl font-bold text-red-500 text-center py-5">Register your airbnb account:</h1>
+        <form action="/host/add-home" method="POST">
+          <input class="shadow py-2 bg-white px-2  rounded-sm" type="text" name="houseName"
+            placeholder="Enter the house name" />
+          <button type="submit" class="bg-red-500 py-2 px-2 rounded-sm text-white">Register</button>
+        </form>
+      </div>
+    </main>
+  </body>
+
+  </html>

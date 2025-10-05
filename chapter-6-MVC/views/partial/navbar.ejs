@@ -1,0 +1,38 @@
+<nav class="bg-gray-200 flex justify-center w-full sticky top-0 z-50">
+  <ul class=" flex items-center flex-wrap w-[90%] gap-5 text-2xl py-5">
+    <li class="max-sm:w-12/12">
+      <a href="/" class="flex items-center gap-1">
+        <img class="w-10" src="https://cdn-icons-png.flaticon.com/128/2111/2111320.png" alt="">
+        <span class="text-red-400 font-bold">airbnb</span>
+      </a>
+    </li>
+    <li class="max-sm:w-12/12">
+      <a class="<%= currentPage === 'home' ? 'bg-red-600 text-white' : 'hover:bg-red-600 hover:text-white' %> py-3 px-2 rounded-md w-full block"
+        href="/">Home Page</a>
+    </li>
+    <li class="max-sm:w-12/12">
+      <a class="<%= currentPage === 'booking' ? 'bg-red-600 text-white' : 'hover:bg-red-600 hover:text-white' %> py-3 px-2 rounded-md w-full block"
+        href="/booking">Booking</a>
+    </li>
+    <li class="max-sm:w-12/12">
+      <a class="<%= currentPage === 'fav-list' ? 'bg-red-600 text-white' : 'hover:bg-red-600 hover:text-white' %> py-3 px-2 rounded-md w-full block"
+        href="/fav-list">Favourite</a>
+    </li>
+    <li class="max-sm:w-12/12">
+      <a class="<%= currentPage === 'home-details' ? 'bg-red-600 text-white' : 'hover:bg-red-600 hover:text-white' %> py-3 px-2 rounded-md w-full block"
+        href="/home-details">Home Details</a>
+    </li>
+    <li class="max-sm:w-12/12">
+      <a class="<%= currentPage === 'home-list' ? 'bg-red-600 text-white' : 'hover:bg-red-600 hover:text-white' %> py-3 px-2 rounded-md w-full block"
+        href="/home-list">Home List</a>
+    </li>
+    <li class="max-sm:w-12/12">
+      <a class="<%= currentPage === 'reserve' ? 'bg-red-600 text-white' : 'hover:bg-red-600 hover:text-white' %> py-3 px-2 rounded-md w-full block"
+        href="/reserve">Reserve</a>
+    </li>
+    <li class="max-sm:w-12/12">
+      <a class="<%= currentPage === 'addhome' ? 'bg-red-600 text-white' : 'hover:bg-red-600 hover:text-white' %> py-3 px-2 rounded-md w-full block"
+        href="/add-home">Add Home</a>
+    </li>
+  </ul>
+</nav>

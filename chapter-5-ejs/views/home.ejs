@@ -1,0 +1,27 @@
+<%- include('partial/head') %>
+  </head>
+
+  <body>
+    <%- include('partial/nav'); %>
+
+
+      <main class="flex flex-col justify-center gap-5 items-center w-full">
+        <div class="w-[90%] my-10">
+          <h1 class="text-4xl rounded-sm text-center font-bold bg-gray-300 py-8">Welcome to Airbnb</h1>
+        </div>
+        <ul class="w-[90%] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <% registerHome.forEach((home)=>{ %>
+
+            <li class="bg-white rounded-lg shadow-sm p-4 hover:shadow-md transition-shadow">
+              <span class="text-lg font-medium text-gray-800">
+                <%=home.houseName %>
+              </span>
+            </li>
+
+            <% }) %>
+        </ul>
+      </main>
+
+  </body>
+
+  </html>
