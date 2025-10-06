@@ -1,7 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 const { rootDir } = require('../utils/rootDir');
-const { register } = require('module');
 
 exports.Home = class Home {
 
