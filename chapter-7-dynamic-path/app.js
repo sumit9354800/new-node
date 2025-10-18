@@ -14,12 +14,11 @@ app.use(express.static(path.join(rootDir, 'public')));
 
 app.use(express.urlencoded());
 
-app.use(hostRouter);
+app.use("/host", hostRouter);
 app.use(storeRouter);
 app.use(error404);
 
-
-const port = 3000;
+const port = 3006;
 
 app.listen(process.env.port || port, () => {
   console.log(`Server is running on http://localhost:${port}`);
