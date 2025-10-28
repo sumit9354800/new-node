@@ -8,7 +8,7 @@ exports.getHomePost = (req, res, next) => {
 }
 
 exports.getHome = (req, res, next) => {
-  console.log(req.session)
+  // console.log(req.session)
   Home.find().then((homeDetails) => {
     res.render('store/index', { homeDetails: homeDetails, currentPage: 'home', title: 'Home airbnb', isLoggedIn: req.isLoggedIn });
   })

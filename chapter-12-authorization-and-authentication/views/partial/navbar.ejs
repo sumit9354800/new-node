@@ -1,47 +1,116 @@
-<nav class="bg-gray-200 flex justify-center w-full sticky top-0 z-50">
-  <ul class="flex items-center flex-wrap w-[90%] gap-5 text-2xl py-5">
-    <li class="max-sm:w-12/12">
-      <a href="/" class="flex items-center gap-1">
-        <img class="w-10" src="https://cdn-icons-png.flaticon.com/128/2111/2111320.png" alt="">
-        <span class="text-red-400 font-bold">airbnb</span>
-      </a>
-    </li>
-    <li class="max-sm:w-12/12">
-      <a class="<%= currentPage === 'home' ? 'bg-red-600 text-white' : 'hover:bg-red-600 hover:text-white' %> py-3 px-2 rounded-md w-full block"
-        href="/">Airbnb</a>
-    </li>
-    <% if(isLoggedIn){ %>
-      <li class="max-sm:w-12/12">
-        <a class="<%= currentPage === 'booking' ? 'bg-red-600 text-white' : 'hover:bg-red-600 hover:text-white' %> py-3 px-2 rounded-md w-full block"
-          href="/booking">Booking</a>
-      </li>
-      <li class="max-sm:w-12/12">
-        <a class="<%= currentPage === 'fav-list' ? 'bg-red-600 text-white' : 'hover:bg-red-600 hover:text-white' %> py-3 px-2 rounded-md w-full block"
-          href="/fav-list">Favourite</a>
-      </li>
-      <li class="max-sm:w-12/12">
-        <a class="<%= currentPage === 'home-list' ? 'bg-red-600 text-white' : 'hover:bg-red-600 hover:text-white' %> py-3 px-2 rounded-md w-full block"
-          href="/home-list">Home List</a>
-      </li>
-      <li class="max-sm:w-12/12">
-        <a class="<%= currentPage === 'host-home-list' ? 'bg-red-600 text-white' : 'hover:bg-red-600 hover:text-white' %> py-3 px-2 rounded-md w-full block"
-          href="/host/host-home">Host Home</a>
-      </li>
-      <li class="max-sm:w-12/12">
-        <a class="<%= currentPage === 'addhome' ? 'bg-red-600 text-white' : 'hover:bg-red-600 hover:text-white' %> py-3 px-2 rounded-md w-full block"
-          href="/host/Add-Home">Add Home</a>
-      </li>
-      <% } %>
-        <li class="max-sm:w-12/12">
+<nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16">
+      <div class="flex items-center">
+        <!-- Brand -->
+        <a href="/" class="flex items-center gap-2">
+          <img class="h-8 w-8 rounded" src="https://cdn-icons-png.flaticon.com/128/2111/2111320.png" alt="logo">
+          <span class="text-red-600 font-semibold text-lg">Airbnb</span>
+        </a>
+      </div>
+
+      <div class="hidden md:flex md:items-center md:space-x-4">
+        <!-- Desktop links -->
+        <a class="<%= currentPage === 'home' ? 'bg-red-600 text-white' : 'text-gray-700 hover:bg-red-600 hover:text-white' %> px-3 py-2 rounded-md text-sm font-medium flex items-center gap-2"
+          href="/"><i class="bi bi-house-door"></i><span>Home</span></a>
+        <% if(isLoggedIn){ %>
+          <a class="<%= currentPage === 'booking' ? 'bg-red-600 text-white' : 'text-gray-700 hover:bg-red-600 hover:text-white' %> px-3 py-2 rounded-md text-sm font-medium flex items-center gap-2"
+            href="/booking"><i class="bi bi-calendar-check"></i><span>Booking</span></a>
+          <a class="<%= currentPage === 'fav-list' ? 'bg-red-600 text-white' : 'text-gray-700 hover:bg-red-600 hover:text-white' %> px-3 py-2 rounded-md text-sm font-medium flex items-center gap-2"
+            href="/fav-list"><i class="bi bi-heart"></i><span>Favourite</span></a>
+          <a class="<%= currentPage === 'home-list' ? 'bg-red-600 text-white' : 'text-gray-700 hover:bg-red-600 hover:text-white' %> px-3 py-2 rounded-md text-sm font-medium flex items-center gap-2"
+            href="/home-list"><i class="bi bi-list-ul"></i><span>Home List</span></a>
+          <a class="<%= currentPage === 'host-home-list' ? 'bg-red-600 text-white' : 'text-gray-700 hover:bg-red-600 hover:text-white' %> px-3 py-2 rounded-md text-sm font-medium flex items-center gap-2"
+            href="/host/host-home"><i class="bi bi-house-heart"></i><span>Host Home</span></a>
+          <a class="<%= currentPage === 'addhome' ? 'bg-red-600 text-white' : 'text-gray-700 hover:bg-red-600 hover:text-white' %> px-3 py-2 rounded-md text-sm font-medium flex items-center gap-2"
+            href="/host/Add-Home"><i class="bi bi-plus-square"></i><span>Add Home</span></a>
+          <% } %>
+      </div>
+
+      <div class="hidden md:flex md:items-center md:space-x-3">
+        <% if(!isLoggedIn){ %>
+          <a href="/sign-up"
+            class="px-3 py-2 rounded-md text-sm font-medium text-red-600 border border-red-600 hover:bg-red-600 hover:text-white flex items-center gap-2"><i
+              class="bi bi-person-plus"></i>Sign
+            Up</a>
+          <a href="/login"
+            class="px-3 py-2 rounded-md text-sm font-medium text-red-600 hover:bg-red-600 hover:text-white flex items-center gap-2"><i
+              class="bi bi-box-arrow-in-right"></i>Login</a>
+          <% } else { %>
+            <form action="/logout" method="post" class="inline">
+              <button type="submit"
+                class="px-3 py-2 rounded-md text-sm font-medium text-red-600 hover:bg-red-600 hover:text-white flex items-center gap-2"><i
+                  class="bi bi-box-arrow-left"></i>Logout</button>
+            </form>
+            <% } %>
+      </div>
+
+      <!-- Mobile menu button -->
+      <div class="flex items-center md:hidden">
+        <button id="nav-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false"
+          class="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-red-500">
+          <span class="sr-only">Open main menu</span>
+          <i class="bi bi-list text-2xl" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu, show/hide based on menu state. -->
+  <div class="md:hidden" id="mobile-menu" hidden>
+    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+      <a href="/"
+        class="flex px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-red-600 hover:text-white items-center gap-2"><i
+          class="bi bi-house-door"></i>Home</a>
+      <% if(isLoggedIn){ %>
+        <a href="/booking"
+          class="flex px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-red-600 hover:text-white items-center gap-2"><i
+            class="bi bi-calendar-check"></i>Booking</a>
+        <a href="/fav-list"
+          class="flex px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-red-600 hover:text-white items-center gap-2"><i
+            class="bi bi-heart"></i>Favourite</a>
+        <a href="/home-list"
+          class="flex px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-red-600 hover:text-white items-center gap-2"><i
+            class="bi bi-list-ul"></i>Home List</a>
+        <a href="/host/host-home"
+          class="flex px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-red-600 hover:text-white items-center gap-2"><i
+            class="bi bi-house-heart"></i>Host Home</a>
+        <a href="/host/Add-Home"
+          class="flex px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-red-600 hover:text-white items-center gap-2"><i
+            class="bi bi-plus-square"></i>Add Home</a>
+        <% } %>
+
           <% if(!isLoggedIn){ %>
-            <a class=" hover:bg-red-700 hover:text-white text-red-500 py-3 px-2 rounded-md w-full block"
-              href="/login">Login</a>
-            <% }else{ %>
-              <form action="/logout" method="post">
-                <input class=" hover:bg-red-700 hover:text-white text-red-500 py-3 px-2 rounded-md w-full block"
-                  type="submit" value="Logout" name="logout">
+            <a href="/sign-up"
+              class="flex px-3 py-2 rounded-md text-base font-medium text-red-600 border border-red-600 hover:bg-red-600 hover:text-white items-center gap-2"><i
+                class="bi bi-person-plus"></i>Sign Up</a>
+            <a href="/login"
+              class="flex px-3 py-2 rounded-md text-base font-medium text-red-600 hover:bg-red-600 hover:text-white items-center gap-2"><i
+                class="bi bi-box-arrow-in-right"></i>Login</a>
+            <% } else { %>
+              <form action="/logout" method="post" class="px-3 py-2">
+                <button type="submit"
+                  class="w-full text-left text-red-600 hover:bg-red-600 hover:text-white px-3 py-2 rounded-md flex items-center gap-2"><i
+                    class="bi bi-box-arrow-left"></i>Logout</button>
               </form>
               <% } %>
-        </li>
-  </ul>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var btn = document.getElementById('nav-toggle');
+      var menu = document.getElementById('mobile-menu');
+      if (!btn || !menu) return;
+      btn.addEventListener('click', function () {
+        var expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        if (menu.hasAttribute('hidden')) {
+          menu.removeAttribute('hidden');
+        } else {
+          menu.setAttribute('hidden', '');
+        }
+      });
+    })();
+  </script>
 </nav>

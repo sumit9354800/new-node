@@ -8,7 +8,7 @@ const { storeRouter } = require('./router/storeRouter');
 const { hostRouter } = require('./router/hostRouter');
 const { error404 } = require('./controllers/error404');
 const { rootDir } = require('./utils/rootDir');
-const { default: mongoose } = require('mongoose');
+const { mongoose } = require('mongoose');
 const { authRouter } = require('./router/authRouter');
 
 const app = express();
