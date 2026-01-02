@@ -1,4 +1,4 @@
-# New Node.js Project 🚀
+# Node.js Project 🚀
 
 A simple Node.js application built to understand backend fundamentals, APIs, and server-side development using JavaScript.
 
